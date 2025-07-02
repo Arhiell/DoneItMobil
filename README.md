@@ -5,7 +5,7 @@
 Una solución digital pensada para **crear, organizar, editar y compartir proyectos con múltiples tareas**, ideal para estudiantes, equipos de trabajo y uso personal. Incluye funcionalidades como manejo de estados, prioridades, fechas y generación de códigos QR para acceso rápido.
 
 ---
-# 📱 [**DoneIt! - Versión Móvil**](https://github.com/Arhiell/DoneItMobil/tree/main)
+# 📱 [**DoneIt! - Versión Web**](https://github.com/Arhiell/DoneIt/tree/main)
 
 🔗 **Este enlace en el título** te redirige al repositorio de la versión móvil de DoneIt!.
 ---
