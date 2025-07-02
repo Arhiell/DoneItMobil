@@ -1,8 +1,13 @@
-# 🚀 **DoneIt!   (Mobil)** ❗
+# 🚀 **DoneIt!** ❗
 
 > 📌 *Gestor de tareas individuales y colaborativas orientado a la organización completa de proyectos.*
 
 Una solución digital pensada para **crear, organizar, editar y compartir proyectos con múltiples tareas**, ideal para estudiantes, equipos de trabajo y uso personal. Incluye funcionalidades como manejo de estados, prioridades, fechas y generación de códigos QR para acceso rápido.
+
+---
+# 📱 [**DoneIt! - Versión Web**](https://github.com/Arhiell/DoneItMobil/tree/main](https://github.com/Arhiell/DoneIt/tree/main)
+
+🔗 **Este enlace en el título** te redirige al repositorio de la versión móvil de DoneIt!.
 
 ---
 
@@ -79,3 +84,7 @@ El objetivo es construir una herramienta realista y funcional que sirva como mod
     * 📍 Extensión **Áulica Goya, Corrientes.**
 
 * 📅 **Año:** 2025
+
+* 👨‍🏫 **Profesores:** 
+    - Fernandez, José. (Desarrollo Web).
+    - Ramírez, Gerardo. (Desarrollo Mobil). 
