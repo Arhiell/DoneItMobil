@@ -7,7 +7,7 @@ Una solución digital pensada para **crear, organizar, editar y compartir proyec
 ---
 # 📱 [**DoneIt! - Versión Web**](https://github.com/Arhiell/DoneIt/tree/main)
 
-🔗 **Este enlace en el título** te redirige al repositorio de la versión móvil de DoneIt!.
+🔗 **Este enlace en el título** te redirige al repositorio de la versión Web de DoneIt!.
 ---
 
 ## 🎯 Objetivo General
