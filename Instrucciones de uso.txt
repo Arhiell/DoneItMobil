@@ -1,0 +1,10 @@
+Entra a la aplicacion, registrate si no tienes una cuenta, inicia sesion y disfruta de la comodidad de poder crear proyectos
+y tareas a tu antojo, para una mejor organizacion de tus dias y objetivos
+
+COMO CREAR UN PROYECTO?
+
+al iniciar sesion, entraras a la pagina principal donde podras crear un proyecto, toca el boton "Crear Proyecto", y rellena los campos solicitados, puedes añadir
+la cantidad que quieras de tareas, luego guarda el proyecto, si quieres editarlo puedes ir al boton de "Ver Proyectos" y seleccionar el proyecto a editar o si quieres
+ver las tareas o eliminarlo.
+
+Como funcion extra pero no completada, puedes verificar tus datos de perfil presionando el icono de usuario en la ventana principal
