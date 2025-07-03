@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/registroLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EAF4FA">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="24dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp"
+                android:layout_marginTop="60dp"
+                android:layout_marginBottom="40dp"
+                android:background="@drawable/login_card"
+                android:elevation="4dp">
+
+                <!-- Título -->
+                <TextView
+                    android:id="@+id/txtTituloRegistro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🧍‍♂️ Registro de Usuario"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:textColor="#0099CC"
+                    android:layout_gravity="center"
+                    android:paddingBottom="16dp" />
+
+                <!-- Nombre -->
+                <EditText
+                    android:id="@+id/edtNombre"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Nombre"
+                    android:textColor="#666666"
+                    android:textColorHint="#888888"
+                    android:padding="12dp"
+                    android:backgroundTint="#33B5E5"
+                    android:layout_marginBottom="12dp" />
+
+                <!-- Apellido -->
+                <EditText
+                    android:id="@+id/edtApellido"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Apellido"
+                    android:textColor="#666666"
+                    android:textColorHint="#888888"
+                    android:padding="12dp"
+                    android:backgroundTint="#33B5E5"
+                    android:layout_marginBottom="12dp" />
+
+                <!-- Correo electrónico -->
+                <EditText
+                    android:id="@+id/edtEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Correo electrónico"
+                    android:textColor="#666666"
+                    android:textColorHint="#888888"
+                    android:inputType="textEmailAddress"
+                    android:padding="12dp"
+                    android:backgroundTint="#33B5E5"
+                    android:layout_marginBottom="12dp" />
+
+                <!-- Nombre de usuario -->
+                <EditText
+                    android:id="@+id/edtNombreUsuario"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Nombre de Usuario"
+                    android:textColor="#666666"
+                    android:textColorHint="#888888"
+                    android:padding="12dp"
+                    android:backgroundTint="#33B5E5"
+                    android:layout_marginBottom="12dp" />
+
+                <!-- Fecha de nacimiento -->
+                <EditText
+                    android:id="@+id/edtFechaNacimiento"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Fecha de Nacimiento"
+                    android:focusable="false"
+                    android:clickable="true"
+                    android:textColor="#666666"
+                    android:textColorHint="#888888"
+                    android:padding="12dp"
+                    android:backgroundTint="#33B5E5"
+                    android:layout_marginBottom="12dp" />
+
+
+
+                <!-- Contraseña -->
+                <EditText
+                    android:id="@+id/edtPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Contraseña"
+                    android:textColor="#666666"
+                    android:textColorHint="#888888"
+                    android:inputType="textPassword"
+                    android:padding="12dp"
+                    android:backgroundTint="#33B5E5"
+                    android:layout_marginBottom="12dp" />
+
+                <!-- Confirmar contraseña -->
+                <EditText
+                    android:id="@+id/edtConfirmarPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Confirmar Contraseña"
+                    android:textColor="#666666"
+                    android:textColorHint="#888888"
+                    android:inputType="textPassword"
+                    android:padding="12dp"
+                    android:backgroundTint="#33B5E5"
+                    android:layout_marginBottom="20dp" />
+
+                <!-- Botón registrarse -->
+                <Button
+                    android:id="@+id/btnRegistrarse"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Registrarse"
+                    android:backgroundTint="#007ACC"
+                    android:textColor="#FFFFFF"
+                    android:padding="12dp" />
+
+                <!-- Link para volver al login -->
+                <TextView
+                    android:id="@+id/btnVolverLogin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="¿Ya tenés cuenta?\nIniciá sesión"
+                    android:textColor="#007ACC"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="16dp"
+                    android:textAlignment="center"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Spinner de carga reutilizable -->
+    <include layout="@layout/loading_overlay" />
+</FrameLayout>

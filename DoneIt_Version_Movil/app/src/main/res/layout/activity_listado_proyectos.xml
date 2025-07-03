@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layoutListado"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E0F7FA">
+
+    <!-- Título -->
+    <TextView
+        android:id="@+id/tvTituloListado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mis Proyectos"
+        android:textSize="22sp"
+        android:textColor="#01579B"
+        android:textStyle="bold"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp" />
+
+    <!-- RecyclerView de proyectos -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewProyectos"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tvTituloListado"
+        android:layout_above="@id/barraInferior"
+        android:layout_marginTop="20dp" />
+
+    <!-- ✅ Barra inferior fija -->
+    <LinearLayout
+        android:id="@+id/barraInferior"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:background="#FFFFFF"
+        android:weightSum="2"
+        android:elevation="10dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp">
+
+        <!-- Botón Home -->
+        <ImageButton
+            android:id="@+id/btnHome"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_home_filled"
+            android:contentDescription="Inicio"
+            android:scaleType="centerInside" />
+
+        <!-- Botón Crear Proyecto -->
+        <ImageButton
+            android:id="@+id/btnCrear"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_add"
+            android:contentDescription="Crear Proyecto"
+            android:scaleType="centerInside" />
+    </LinearLayout>
+</RelativeLayout>

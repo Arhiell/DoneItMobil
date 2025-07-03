@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- 📄 CONTENIDO PRINCIPAL -->
+    <RelativeLayout
+        android:id="@+id/homeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#E0F7FA">
+
+        <!-- Contenido scrollable -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/barraInferior"
+            android:layout_alignParentTop="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <!-- Cartel de bienvenida -->
+                <LinearLayout
+                    android:id="@+id/cartelBienvenida"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="40dp"
+                    android:padding="20dp"
+                    android:background="@android:color/white"
+                    android:elevation="6dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="16dp">
+
+                    <TextView
+                        android:id="@+id/txtBienvenida"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="¡Bienvenido a Done It!"
+                        android:textSize="20sp"
+                        android:textColor="#01579B"
+                        android:textStyle="bold"
+                        android:layout_gravity="center_horizontal" />
+                </LinearLayout>
+
+                <!-- Botón Crear Proyecto -->
+                <Button
+                    android:id="@+id/btnCrearProyecto"
+                    android:layout_width="280dp"
+                    android:layout_height="wrap_content"
+                    android:text="Crear Proyecto"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="50dp"
+                    android:backgroundTint="#0277BD"
+                    android:textColor="#FFFFFF" />
+
+                <!-- Botón Ver Proyectos -->
+                <Button
+                    android:id="@+id/btnVerProyectos"
+                    android:layout_width="280dp"
+                    android:layout_height="wrap_content"
+                    android:text="Ver Proyectos"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="20dp"
+                    android:backgroundTint="#4DD0E1"
+                    android:textColor="#FFFFFF" />
+            </LinearLayout>
+        </ScrollView>
+
+        <!-- Barra inferior fija -->
+        <LinearLayout
+            android:id="@+id/barraInferior"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal"
+            android:background="#FFFFFF"
+            android:weightSum="3"
+            android:elevation="10dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp">
+
+            <ImageButton
+                android:id="@+id/btnMenu"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_menu"
+                android:contentDescription="Menú"
+                android:scaleType="centerInside" />
+
+            <ImageButton
+                android:id="@+id/btnHome"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_home_filled"
+                android:contentDescription="Inicio"
+                android:scaleType="centerInside" />
+
+            <ImageButton
+                android:id="@+id/btnPerfil"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_profile"
+                android:contentDescription="Perfil"
+                android:scaleType="centerInside" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/loadingOverlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#80000000"
+            android:visibility="gone"
+            android:clickable="true"
+            android:focusable="true" />
+    </RelativeLayout>
+
+    <!-- 📜 BARRA LATERAL -->
+    <ListView
+        android:id="@+id/navList"
+        android:layout_width="280dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="#FAFAFA"
+        android:divider="@android:color/darker_gray"
+        android:dividerHeight="1dp" />
+</androidx.drawerlayout.widget.DrawerLayout>

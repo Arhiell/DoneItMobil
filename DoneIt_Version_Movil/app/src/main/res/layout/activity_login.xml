@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/loginLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EAF4FA">
+
+    <!-- Contenido scrollable -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="24dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp"
+                android:layout_marginTop="80dp"
+                android:layout_marginBottom="40dp"
+                android:background="@drawable/login_card"
+                android:elevation="4dp">
+
+                <!-- Logo o Título -->
+                <TextView
+                    android:id="@+id/txtLogo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🕐 DoneIt!"
+                    android:textSize="28sp"
+                    android:textStyle="bold"
+                    android:textColor="#33B5E5"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:paddingBottom="16dp" />
+
+                <!-- Subtítulo -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Iniciar Sesión"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#0099CC"
+                    android:layout_gravity="center"
+                    android:paddingBottom="16dp" />
+
+                <!-- Campo Email -->
+                <EditText
+                    android:id="@+id/editTextEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Usuario o Email"
+                    android:textColor="#666666"
+                    android:textColorHint="#888888"
+                    android:inputType="textEmailAddress"
+                    android:padding="12dp"
+                    android:backgroundTint="#33B5E5"
+                    android:layout_marginBottom="12dp" />
+
+                <!-- Campo Contraseña -->
+                <EditText
+                    android:id="@+id/editTextPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Contraseña"
+                    android:textColor="#666666"
+                    android:textColorHint="#888888"
+                    android:inputType="textPassword"
+                    android:padding="12dp"
+                    android:backgroundTint="#33B5E5"
+                    android:layout_marginBottom="16dp" />
+
+                <!-- Botón Iniciar Sesión -->
+                <Button
+                    android:id="@+id/btnLogin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="→ Iniciar Sesión"
+                    android:backgroundTint="#007ACC"
+                    android:textColor="#FFFFFF"
+                    android:padding="12dp" />
+
+                <!-- Link de registro -->
+                <TextView
+                    android:id="@+id/txtRegistrarse"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingTop="16dp"
+                    android:text="¿No tienes cuenta?\nRegistrate"
+                    android:textColor="#007ACC"
+                    android:textSize="14sp"
+                    android:textAlignment="center" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Spinner de carga reutilizable -->
+    <include layout="@layout/loading_overlay" />
+</FrameLayout>

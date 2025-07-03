@@ -1,0 +1,6 @@
+@DoneItAPI_HostAddress = http://localhost:5101
+
+GET {{DoneItAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

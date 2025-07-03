@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E0F7FA">
+
+    <!-- Scroll del contenido principal -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/barraInferior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp"
+            android:layout_marginBottom="16dp"
+            android:gravity="center_horizontal"
+            android:background="@android:color/transparent">
+
+            <!-- Contenedor blanco -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp"
+                android:background="@android:color/white"
+                android:elevation="6dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="24dp">
+
+                <!-- Campo: Nombre del proyecto -->
+                <EditText
+                    android:id="@+id/etNombreProyecto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Nombre del proyecto"
+                    android:textColor="#666666"
+                    android:textColorHint="#888888"
+                    android:padding="12dp"
+                    android:layout_marginBottom="16dp" />
+
+                <!-- Campo: Descripción del proyecto -->
+                <EditText
+                    android:id="@+id/etDescripcionProyecto"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:hint="Descripción del proyecto"
+                    android:textColor="#666666"
+                    android:textColorHint="#888888"
+                    android:gravity="top|start"
+                    android:padding="12dp"
+                    android:layout_marginBottom="24dp" />
+
+
+                <!-- Título -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Editar Tareas"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#1976D2"
+                    android:layout_marginBottom="12dp" />
+
+                <!-- Botón Agregar -->
+                <Button
+                    android:id="@+id/btnAgregarTarea"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Agregar Tarea"
+                    android:backgroundTint="#1976D2"
+                    android:textColor="@android:color/white"
+                    android:layout_marginBottom="24dp" />
+
+                <!-- RecyclerView -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvTareas"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="24dp" />
+
+                <!-- Botones Guardar / Cancelar -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btnGuardarCambios"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Guardar\nCambios"
+                        android:backgroundTint="#1976D2"
+                        android:textColor="@android:color/white" />
+
+                    <View
+                        android:layout_width="16dp"
+                        android:layout_height="wrap_content" />
+
+                    <Button
+                        android:id="@+id/btnCancelar"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Cancelar\nEdición"
+                        android:backgroundTint="#D32F2F"
+                        android:textColor="@android:color/white" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Barra inferior -->
+    <LinearLayout
+        android:id="@+id/barraInferior"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:background="#FFFFFF"
+        android:weightSum="2"
+        android:elevation="10dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp">
+
+        <ImageButton
+            android:id="@+id/btnHome"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_home_filled"
+            android:contentDescription="Inicio"
+            android:scaleType="centerInside" />
+
+        <ImageButton
+            android:id="@+id/btnFolder"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_folder_open"
+            android:contentDescription="Proyectos"
+            android:scaleType="centerInside" />
+    </LinearLayout>
+    <View
+        android:id="@+id/loadingOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#80000000"
+        android:visibility="gone"
+        android:clickable="true"
+        android:focusable="true"/>
+
+</RelativeLayout>
