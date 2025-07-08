@@ -3,4 +3,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="rojoMenu">#D32F2F</color>
+    <color name="texto_gris">#666666</color>
+    <color name="pista_gris">#888888</color>
+    <color name="celeste_principal">#33B5E5</color>
 </resources>

@@ -8,6 +8,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+        android:background="@android:color/transparent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -44,11 +45,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Nombre"
-                    android:textColor="#666666"
-                    android:textColorHint="#888888"
+                    android:textColor="@color/texto_gris"
+                    android:textColorHint="@color/pista_gris"
                     android:padding="12dp"
-                    android:backgroundTint="#33B5E5"
-                    android:layout_marginBottom="12dp" />
+                    android:backgroundTint="@color/celeste_principal"
+                    android:layout_marginBottom="12dp"
+                    android:inputType="textPersonName"
+                    android:imeOptions="actionNext" />
 
                 <!-- Apellido -->
                 <EditText
@@ -56,11 +59,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Apellido"
-                    android:textColor="#666666"
-                    android:textColorHint="#888888"
+                    android:textColor="@color/texto_gris"
+                    android:textColorHint="@color/pista_gris"
                     android:padding="12dp"
-                    android:backgroundTint="#33B5E5"
-                    android:layout_marginBottom="12dp" />
+                    android:backgroundTint="@color/celeste_principal"
+                    android:layout_marginBottom="12dp"
+                    android:inputType="textPersonName"
+                    android:imeOptions="actionNext" />
 
                 <!-- Correo electrónico -->
                 <EditText
@@ -68,12 +73,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Correo electrónico"
-                    android:textColor="#666666"
-                    android:textColorHint="#888888"
+                    android:textColor="@color/texto_gris"
+                    android:textColorHint="@color/pista_gris"
                     android:inputType="textEmailAddress"
                     android:padding="12dp"
-                    android:backgroundTint="#33B5E5"
-                    android:layout_marginBottom="12dp" />
+                    android:backgroundTint="@color/celeste_principal"
+                    android:layout_marginBottom="12dp"
+                    android:imeOptions="actionNext" />
 
                 <!-- Nombre de usuario -->
                 <EditText
@@ -81,11 +87,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Nombre de Usuario"
-                    android:textColor="#666666"
-                    android:textColorHint="#888888"
+                    android:textColor="@color/texto_gris"
+                    android:textColorHint="@color/pista_gris"
                     android:padding="12dp"
-                    android:backgroundTint="#33B5E5"
-                    android:layout_marginBottom="12dp" />
+                    android:backgroundTint="@color/celeste_principal"
+                    android:layout_marginBottom="12dp"
+                    android:inputType="textPersonName"
+                    android:imeOptions="actionNext" />
 
                 <!-- Fecha de nacimiento -->
                 <EditText
@@ -95,13 +103,13 @@
                     android:hint="Fecha de Nacimiento"
                     android:focusable="false"
                     android:clickable="true"
-                    android:textColor="#666666"
-                    android:textColorHint="#888888"
+                    android:textColor="@color/texto_gris"
+                    android:textColorHint="@color/pista_gris"
                     android:padding="12dp"
-                    android:backgroundTint="#33B5E5"
-                    android:layout_marginBottom="12dp" />
-
-
+                    android:backgroundTint="@color/celeste_principal"
+                    android:layout_marginBottom="12dp"
+                    android:inputType="text"
+                    android:imeOptions="actionNext" />
 
                 <!-- Contraseña -->
                 <EditText
@@ -109,12 +117,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Contraseña"
-                    android:textColor="#666666"
-                    android:textColorHint="#888888"
+                    android:textColor="@color/texto_gris"
+                    android:textColorHint="@color/pista_gris"
                     android:inputType="textPassword"
                     android:padding="12dp"
-                    android:backgroundTint="#33B5E5"
-                    android:layout_marginBottom="12dp" />
+                    android:backgroundTint="@color/celeste_principal"
+                    android:layout_marginBottom="12dp"
+                    android:imeOptions="actionNext" />
 
                 <!-- Confirmar contraseña -->
                 <EditText
@@ -122,12 +131,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Confirmar Contraseña"
-                    android:textColor="#666666"
-                    android:textColorHint="#888888"
+                    android:textColor="@color/texto_gris"
+                    android:textColorHint="@color/pista_gris"
                     android:inputType="textPassword"
                     android:padding="12dp"
-                    android:backgroundTint="#33B5E5"
-                    android:layout_marginBottom="20dp" />
+                    android:backgroundTint="@color/celeste_principal"
+                    android:layout_marginBottom="20dp"
+                    android:imeOptions="actionDone" />
 
                 <!-- Botón registrarse -->
                 <Button
