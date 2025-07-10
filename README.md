@@ -72,10 +72,50 @@ El objetivo es construir una herramienta realista y funcional que sirva como mod
 - 👨‍💻 [**Mill, Juan.**](https://github.com/r4ideny)
 
 ---
-## 📝 Licencia
+# 📱 DoneIt! - Gestor de Proyectos y Tareas
 
-- **Sin mencionar modo de Licencia**
+Una aplicación para gestionar proyectos personales y grupales de forma práctica e intuitiva.
+
 ---
+
+## 🎥 Demostraciones en video
+
+| Funcionalidad | Enlace |
+|---------------|--------|
+| 📝 **Registro** | [Ver video](https://github.com/user-attachments/assets/9e4d29f6-c107-4981-9742-3e9e5c0e8b51) |
+| 🔐 **Login** | [Ver video](https://github.com/user-attachments/assets/bf05413e-d071-4310-8df8-2590b7146fe6) |
+| 👤 **Home → Perfil Usuario** | [Ver video](https://github.com/user-attachments/assets/6d1143d7-4a88-482c-a818-e53824a394c2) |
+| 📂 **Mis Proyectos** | [Ver video](https://github.com/user-attachments/assets/f6bbc02e-8fad-455f-980f-097cce3ed47e) |
+| ✏️🗑️ **Editar / Eliminar Proyecto** | [Ver video](https://github.com/user-attachments/assets/16a7cf26-e15e-447c-a30e-54ad450bbcdf) |
+| 🆕 **Creación de Proyecto** | [Ver video](https://github.com/user-attachments/assets/4a4d5924-dbbe-49e4-86cc-b70158dfc92d) |
+| 🔄 **Navegación con barra inferior** | [Ver video](https://github.com/user-attachments/assets/2da3e45e-c44d-47eb-bc4a-eb75edd25866) |
+
+---
+
+## 🛠️ Cambios Realizados
+
+### 🔧 Mejoras generales
+- 🧩 Se crearon **ViewModels** para cumplir correctamente con el patrón MVVM.
+- 📥 En el **registro**, se reemplazó el botón *Enter* por *Siguiente* para facilitar el llenado de campos.
+- 📧 Validación del correo electrónico: solo se permiten dominios válidos (`@gmail.com`, `@hotmail.com`, etc).
+
+### 📅 Crear Proyecto
+- ⚠️ Advertencia visual al intentar **eliminar una tarea**.
+- 🕓 El formato de fecha fue ajustado a: `DD-MM-AAAA HH:MM` (antes incluía `T` y segundos).
+- 🏷️ Se agregaron **títulos descriptivos** para los campos `Estado` y `Prioridad`.
+
+### 🧭 Navegación
+- 🚫 Todos los **spinners** ahora bloquean la **barra inferior de navegación** para evitar interferencias.
+
+---
+
+## 🚀 ¡Seguimos mejorando!
+DoneIt! busca ofrecer una experiencia fluida, clara y ordenada para la gestión de tareas personales.  
+Agradecemos cualquier sugerencia o reporte de error 💬
+
+---
+
+
 # 🎓 Datos Académicos
 * 📚 **Materia:**Programación III
 * 💻 **Carrera:** Tecnicatura Universitaria en Programación
@@ -89,46 +129,6 @@ El objetivo es construir una herramienta realista y funcional que sirva como mod
  
     - Ramírez, Gerardo. (Desarrollo Mobil).
 
-
-
-
-VIDEOS DE LA APLICACION:
-
-Registro:
-https://github.com/user-attachments/assets/9e4d29f6-c107-4981-9742-3e9e5c0e8b51
-
-Login:
-https://github.com/user-attachments/assets/bf05413e-d071-4310-8df8-2590b7146fe6
-
-Home -> Perfil usuario:
-https://github.com/user-attachments/assets/6d1143d7-4a88-482c-a818-e53824a394c2
-
-Mis Proyectos:
-https://github.com/user-attachments/assets/f6bbc02e-8fad-455f-980f-097cce3ed47e
-
-Eliminar y Editar Proyecto:
-https://github.com/user-attachments/assets/16a7cf26-e15e-447c-a30e-54ad450bbcdf
-
-Creacion de Proyecto:
-https://github.com/user-attachments/assets/4a4d5924-dbbe-49e4-86cc-b70158dfc92d
-
-Moverse por la aplicacion atraves de botones de la barra inferior:
-https://github.com/user-attachments/assets/2da3e45e-c44d-47eb-bc4a-eb75edd25866
-
-Cambios realizados:
-
--Se crearon Clases ViewModel para un mejor cumplimiento de MVVM
-
--Ahora en el registro el boton de enter se sustituyo con siguiente, para ir al siguiente campo en vez de realizar un salto de linea
-
--Tambien en el registro, solo se pueden ingresar un @ valido en correo electronico (@gmail.com, @hotmail.com, etc)
-
--En Crear Proyecto:
-                  >Advertencia de eliminar al querer eliminar una tarea
-                  >El formato de fecha ahora es DD-MM-AAAA HH:MM en vez de DD-MM-AAAA T HH:MM:SS, esto tambien aplica para editar tareas, en caso que no recuerde antes las horas decian: 27/11/2024T18:45:00
-                  >Ahora Estado y Prioridad tienen titulos para que el cliente sepa que esta categorizando con cada opcion
-
--En general todos los spinners bloquean la barra inferior de navegacion
 
 -Ahora al ver proyectos en Mis Proyectos hay una > mirando hacia abajo para desplegar las tareas, que cambia a un < mirando hacia arriba para ocultarlas
 
