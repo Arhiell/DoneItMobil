@@ -57,7 +57,7 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="50dp"
                     android:backgroundTint="#0277BD"
-                    android:textColor="#FFFFFF" />
+                    android:textColor="@color/white" />
 
                 <!-- Botón Ver Proyectos -->
                 <Button
@@ -68,7 +68,7 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="20dp"
                     android:backgroundTint="#4DD0E1"
-                    android:textColor="#FFFFFF" />
+                    android:textColor="@color/white" />
             </LinearLayout>
         </ScrollView>
 
@@ -79,7 +79,7 @@
             android:layout_height="70dp"
             android:layout_alignParentBottom="true"
             android:orientation="horizontal"
-            android:background="#FFFFFF"
+            android:background="@color/white"
             android:weightSum="3"
             android:elevation="10dp"
             android:paddingTop="5dp"
@@ -115,15 +115,6 @@
                 android:contentDescription="Perfil"
                 android:scaleType="centerInside" />
         </LinearLayout>
-
-        <View
-            android:id="@+id/loadingOverlay"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#80000000"
-            android:visibility="gone"
-            android:clickable="true"
-            android:focusable="true" />
     </RelativeLayout>
 
     <!-- 📜 BARRA LATERAL -->
@@ -135,4 +126,12 @@
         android:background="#FAFAFA"
         android:divider="@android:color/darker_gray"
         android:dividerHeight="1dp" />
+
+    <!--SPINNER OVERLAY-->
+    <include
+        layout="@layout/loading_overlay"
+        android:id="@+id/includeLoading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
 </androidx.drawerlayout.widget.DrawerLayout>

@@ -15,6 +15,7 @@ import com.herreroco.doneit_version_movil.R
 import com.herreroco.doneit_version_movil.model.Proyecto
 import com.herreroco.doneit_version_movil.model.TareaTemporal
 import com.herreroco.doneit_version_movil.network.RetrofitClient
+import android.widget.ImageView
 import kotlinx.coroutines.*
 
 class ProyectoAdapter(
@@ -36,22 +37,29 @@ class ProyectoAdapter(
         holder.tvNombre.text = proyecto.nombre
         holder.tvDescripcion.text = proyecto.descripcion ?: "Sin descripción"
 
-        // Expande o colapsa tareas al hacer clic en el nombre
-        holder.tvNombre.setOnClickListener {
-            val expandido = proyectosExpandidos.contains(proyecto.id_Proyecto)
-            if (expandido) {
-                proyectosExpandidos.remove(proyecto.id_Proyecto)
-                holder.layoutTareas.visibility = View.GONE
-            } else {
+        val expandido = proyectosExpandidos.contains(proyecto.id_Proyecto)
+
+        // Estado inicial
+        holder.layoutTareas.visibility = if (expandido) View.VISIBLE else View.GONE
+        holder.ivExpandir.setImageResource(
+            if (expandido) R.drawable.ic_expand_less else R.drawable.ic_expand_more
+        )
+
+        // Click sobre el encabezado (nombre + flecha)
+        holder.header.setOnClickListener {
+            val expandiendo = !proyectosExpandidos.contains(proyecto.id_Proyecto)
+
+            if (expandiendo) {
                 proyectosExpandidos.add(proyecto.id_Proyecto)
                 holder.layoutTareas.visibility = View.VISIBLE
+                holder.ivExpandir.setImageResource(R.drawable.ic_expand_less)
                 cargarTareas(proyecto.id_Proyecto, holder)
+            } else {
+                proyectosExpandidos.remove(proyecto.id_Proyecto)
+                holder.layoutTareas.visibility = View.GONE
+                holder.ivExpandir.setImageResource(R.drawable.ic_expand_more)
             }
         }
-
-        // Estado de expansión
-        holder.layoutTareas.visibility =
-            if (proyectosExpandidos.contains(proyecto.id_Proyecto)) View.VISIBLE else View.GONE
 
         // Botón editar tareas
         holder.btnEditarTareas.setOnClickListener {
@@ -69,6 +77,7 @@ class ProyectoAdapter(
         }
     }
 
+
     private fun cargarTareas(idProyecto: Int, holder: ProyectoViewHolder) {
         CoroutineScope(Dispatchers.IO).launch {
             try {
@@ -77,24 +86,26 @@ class ProyectoAdapter(
 
                 withContext(Dispatchers.Main) {
                     if (response.isSuccessful && response.body() != null) {
-                        val listaTareas = response.body()!!
+                        val listaTareas = response.body()!!.map {
+                            TareaTemporal(
+                                id = it.id_Tarea,
+                                titulo = it.titulo,
+                                descripcion = it.descripcion ?: "",
+                                fechaInicio = it.fecha_Inicio,
+                                fechaFin = it.fecha_Fin,
+                                estado = it.estado,
+                                prioridad = it.prioridad
+                            )
+                        }
+
                         val tareaAdapter = TareaFlexibleAdapter(
-                            tareas = listaTareas.map {
-                                TareaTemporal(
-                                    id = it.id_Tarea,
-                                    titulo = it.titulo,
-                                    descripcion = it.descripcion ?: "",
-                                    fechaInicio = it.fecha_Inicio,
-                                    fechaFin = it.fecha_Fin,
-                                    estado = it.estado,
-                                    prioridad = it.prioridad
-                                )
-                            },
-                            modoEditable = false // Solo vista, sin botones
+                            modoEditable = false
                         )
+                        tareaAdapter.setTareas(listaTareas)
 
                         holder.recyclerTareas.layoutManager = LinearLayoutManager(holder.itemView.context)
                         holder.recyclerTareas.adapter = tareaAdapter
+
                     } else {
                         Toast.makeText(holder.itemView.context, "Error ${response.code()} al obtener tareas", Toast.LENGTH_SHORT).show()
                     }
@@ -108,9 +119,12 @@ class ProyectoAdapter(
         }
     }
 
+
     override fun getItemCount(): Int = listaProyectos.size
 
     inner class ProyectoViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val header: LinearLayout = itemView.findViewById(R.id.headerProyecto)
+        val ivExpandir: ImageView = itemView.findViewById(R.id.ivExpandir)
         val tvNombre: TextView = itemView.findViewById(R.id.tvNombreProyecto)
         val tvDescripcion: TextView = itemView.findViewById(R.id.tvDescripcionProyecto)
         val btnEditarTareas: ImageButton = itemView.findViewById(R.id.btnEditarTareas)

@@ -1,78 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#F6F9FF">
+    android:layout_height="match_parent">
 
-    <!-- Scroll del contenido principal -->
-    <ScrollView
-        android:id="@+id/scrollViewPerfil"
+    <!-- Capa principal con RelativeLayout -->
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/barraInferior">
+        android:background="#F6F9FF">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="24dp"
-            android:background="@android:color/white">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="👤 Perfil del Usuario"
-                android:textSize="20sp"
-                android:textColor="#007BFF"
-                android:layout_marginBottom="16dp"
-                android:textStyle="bold" />
-
-            <TextView android:text="Usuario:" style="@style/PerfilLabel"/>
-            <TextView android:id="@+id/tvUsuario" style="@style/PerfilValue"/>
-
-            <TextView android:text="Nombre Completo:" style="@style/PerfilLabel"/>
-            <TextView android:id="@+id/tvNombreCompleto" style="@style/PerfilValue"/>
-
-            <TextView android:text="Fecha de Nacimiento:" style="@style/PerfilLabel"/>
-            <TextView android:id="@+id/tvFechaNacimiento" style="@style/PerfilValue"/>
-
-            <TextView android:text="Email:" style="@style/PerfilLabel"/>
-            <TextView android:id="@+id/tvEmail" style="@style/PerfilValue"/>
-
-            <TextView android:text="Fecha de Registro:" style="@style/PerfilLabel"/>
-            <TextView android:id="@+id/tvFechaRegistro" style="@style/PerfilValue"/>
-
-            <Button
-                android:id="@+id/btnEditar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Editar datos"
-                android:layout_marginTop="24dp"
-                android:backgroundTint="#007BFF"
-                android:textColor="#FFFFFF" />
-        </LinearLayout>
-    </ScrollView>
-
-    <!-- ✅ Barra inferior con solo el botón Home -->
-    <LinearLayout
-        android:id="@+id/barraInferior"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:layout_alignParentBottom="true"
-        android:orientation="horizontal"
-        android:background="#FFFFFF"
-        android:weightSum="1"
-        android:elevation="10dp"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp">
-
-        <ImageButton
-            android:id="@+id/btnHome"
+        <!-- Scroll del contenido -->
+        <ScrollView
+            android:id="@+id/scrollViewPerfil"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@android:color/transparent"
-            android:src="@drawable/ic_home_filled"
-            android:contentDescription="Inicio"
-            android:scaleType="centerInside" />
-    </LinearLayout>
-</RelativeLayout>
+            android:layout_above="@id/barraInferior">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp"
+                android:background="@android:color/white">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="👤 Perfil del Usuario"
+                    android:textSize="20sp"
+                    android:textColor="#007BFF"
+                    android:layout_marginBottom="16dp"
+                    android:textStyle="bold" />
+
+                <TextView android:text="Usuario:" style="@style/PerfilLabel"/>
+                <TextView android:id="@+id/tvUsuario" style="@style/PerfilValue"/>
+
+                <TextView android:text="Nombre Completo:" style="@style/PerfilLabel"/>
+                <TextView android:id="@+id/tvNombreCompleto" style="@style/PerfilValue"/>
+
+                <TextView android:text="Fecha de Nacimiento:" style="@style/PerfilLabel"/>
+                <TextView android:id="@+id/tvFechaNacimiento" style="@style/PerfilValue"/>
+
+                <TextView android:text="Email:" style="@style/PerfilLabel"/>
+                <TextView android:id="@+id/tvEmail" style="@style/PerfilValue"/>
+
+                <TextView android:text="Fecha de Registro:" style="@style/PerfilLabel"/>
+                <TextView android:id="@+id/tvFechaRegistro" style="@style/PerfilValue"/>
+
+                <Button
+                    android:id="@+id/btnEditar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Editar datos"
+                    android:layout_marginTop="24dp"
+                    android:backgroundTint="#007BFF"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+        </ScrollView>
+
+        <!-- Barra inferior -->
+        <LinearLayout
+            android:id="@+id/barraInferior"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal"
+            android:background="@color/white"
+            android:weightSum="1"
+            android:elevation="10dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp">
+
+            <ImageButton
+                android:id="@+id/btnHome"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_home_filled"
+                android:contentDescription="Inicio"
+                android:scaleType="centerInside" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <!-- Overlay que cubre todo (y bloquea todo) -->
+    <include
+        layout="@layout/loading_overlay"
+        android:id="@+id/includeLoading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</FrameLayout>

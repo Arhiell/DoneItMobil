@@ -35,7 +35,7 @@
                     android:text="🕐 DoneIt!"
                     android:textSize="28sp"
                     android:textStyle="bold"
-                    android:textColor="#33B5E5"
+                    android:textColor="@color/celeste_principal"
                     android:gravity="center"
                     android:layout_gravity="center"
                     android:paddingBottom="16dp" />
@@ -57,11 +57,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Usuario o Email"
-                    android:textColor="#666666"
-                    android:textColorHint="#888888"
+                    android:textColor="@color/texto_gris"
+                    android:textColorHint="@color/pista_gris"
                     android:inputType="textEmailAddress"
                     android:padding="12dp"
-                    android:backgroundTint="#33B5E5"
+                    android:backgroundTint="@color/celeste_principal"
                     android:layout_marginBottom="12dp" />
 
                 <!-- Campo Contraseña -->
@@ -70,11 +70,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Contraseña"
-                    android:textColor="#666666"
-                    android:textColorHint="#888888"
+                    android:textColor="@color/texto_gris"
+                    android:textColorHint="@color/pista_gris"
                     android:inputType="textPassword"
                     android:padding="12dp"
-                    android:backgroundTint="#33B5E5"
+                    android:backgroundTint="@color/celeste_principal"
                     android:layout_marginBottom="16dp" />
 
                 <!-- Botón Iniciar Sesión -->
@@ -84,7 +84,7 @@
                     android:layout_height="wrap_content"
                     android:text="→ Iniciar Sesión"
                     android:backgroundTint="#007ACC"
-                    android:textColor="#FFFFFF"
+                    android:textColor="@color/white"
                     android:padding="12dp" />
 
                 <!-- Link de registro -->

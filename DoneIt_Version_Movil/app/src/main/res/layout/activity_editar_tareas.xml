@@ -1,159 +1,162 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#E0F7FA">
+    android:layout_height="match_parent">
 
-    <!-- Scroll del contenido principal -->
-    <ScrollView
+    <!-- Contenedor visual principal -->
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/barraInferior">
+        android:background="#E0F7FA">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="24dp"
-            android:layout_marginBottom="16dp"
-            android:gravity="center_horizontal"
-            android:background="@android:color/transparent">
+        <!-- Contenido principal scrollable -->
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:fillViewport="true"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/barraInferior"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
 
-            <!-- Contenedor blanco -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:padding="24dp"
-                android:background="@android:color/white"
-                android:elevation="6dp"
-                android:layout_marginTop="24dp"
-                android:layout_marginBottom="24dp">
+                android:gravity="center_horizontal"
+                android:background="@android:color/transparent">
 
-                <!-- Campo: Nombre del proyecto -->
-                <EditText
-                    android:id="@+id/etNombreProyecto"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Nombre del proyecto"
-                    android:textColor="#666666"
-                    android:textColorHint="#888888"
-                    android:padding="12dp"
-                    android:layout_marginBottom="16dp" />
-
-                <!-- Campo: Descripción del proyecto -->
-                <EditText
-                    android:id="@+id/etDescripcionProyecto"
-                    android:layout_width="match_parent"
-                    android:layout_height="120dp"
-                    android:hint="Descripción del proyecto"
-                    android:textColor="#666666"
-                    android:textColorHint="#888888"
-                    android:gravity="top|start"
-                    android:padding="12dp"
-                    android:layout_marginBottom="24dp" />
-
-
-                <!-- Título -->
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Editar Tareas"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:textColor="#1976D2"
-                    android:layout_marginBottom="12dp" />
-
-                <!-- Botón Agregar -->
-                <Button
-                    android:id="@+id/btnAgregarTarea"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Agregar Tarea"
-                    android:backgroundTint="#1976D2"
-                    android:textColor="@android:color/white"
-                    android:layout_marginBottom="24dp" />
-
-                <!-- RecyclerView -->
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rvTareas"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="24dp" />
-
-                <!-- Botones Guardar / Cancelar -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="vertical"
+                    android:padding="24dp"
+                    android:background="@android:color/white"
+                    android:elevation="6dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginBottom="24dp">
+
+                    <EditText
+                        android:id="@+id/etNombreProyecto"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Nombre del proyecto"
+                        android:textColor="@color/texto_gris"
+                        android:textColorHint="@color/pista_gris"
+                        android:padding="12dp"
+                        android:layout_marginBottom="16dp" />
+
+                    <EditText
+                        android:id="@+id/etDescripcionProyecto"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:hint="Descripción del proyecto"
+                        android:textColor="@color/texto_gris"
+                        android:textColorHint="@color/pista_gris"
+                        android:gravity="top|start"
+                        android:padding="12dp"
+                        android:layout_marginBottom="24dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Editar Tareas"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/azulBoton"
+                        android:layout_marginBottom="12dp" />
 
                     <Button
-                        android:id="@+id/btnGuardarCambios"
-                        android:layout_width="0dp"
+                        android:id="@+id/btnAgregarTarea"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Guardar\nCambios"
-                        android:backgroundTint="#1976D2"
-                        android:textColor="@android:color/white" />
+                        android:text="Agregar Tarea"
+                        android:backgroundTint="@color/azulBoton"
+                        android:textColor="@android:color/white"
+                        android:layout_marginBottom="24dp" />
 
-                    <View
-                        android:layout_width="16dp"
-                        android:layout_height="wrap_content" />
-
-                    <Button
-                        android:id="@+id/btnCancelar"
-                        android:layout_width="0dp"
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvTareas"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Cancelar\nEdición"
-                        android:backgroundTint="#D32F2F"
-                        android:textColor="@android:color/white" />
+                        android:layout_marginBottom="24dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/btnGuardarCambios"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Guardar\nCambios"
+                            android:backgroundTint="@color/azulBoton"
+                            android:textColor="@android:color/white" />
+
+                        <View
+                            android:layout_width="16dp"
+                            android:layout_height="wrap_content" />
+
+                        <Button
+                            android:id="@+id/btnCancelar"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Cancelar\nEdición"
+                            android:backgroundTint="@color/rojoMenu"
+                            android:textColor="@android:color/white" />
+                    </LinearLayout>
                 </LinearLayout>
-
             </LinearLayout>
+        </ScrollView>
+
+        <!-- Barra inferior -->
+        <LinearLayout
+            android:id="@+id/barraInferior"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:orientation="horizontal"
+            android:background="@color/white"
+            android:weightSum="2"
+            android:elevation="10dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <ImageButton
+                android:id="@+id/btnHome"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_home_filled"
+                android:contentDescription="Inicio"
+                android:scaleType="centerInside" />
+
+            <ImageButton
+                android:id="@+id/btnFolder"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_folder_open"
+                android:contentDescription="Proyectos"
+                android:scaleType="centerInside" />
         </LinearLayout>
-    </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <!-- Barra inferior -->
-    <LinearLayout
-        android:id="@+id/barraInferior"
+    <!-- Overlay de carga que bloquea toda la pantalla (incluye barra inferior) -->
+    <include
+        android:id="@+id/includeLoading"
+        layout="@layout/loading_overlay"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:layout_alignParentBottom="true"
-        android:orientation="horizontal"
-        android:background="#FFFFFF"
-        android:weightSum="2"
-        android:elevation="10dp"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp">
+        android:layout_height="match_parent" />
 
-        <ImageButton
-            android:id="@+id/btnHome"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@android:color/transparent"
-            android:src="@drawable/ic_home_filled"
-            android:contentDescription="Inicio"
-            android:scaleType="centerInside" />
-
-        <ImageButton
-            android:id="@+id/btnFolder"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@android:color/transparent"
-            android:src="@drawable/ic_folder_open"
-            android:contentDescription="Proyectos"
-            android:scaleType="centerInside" />
-    </LinearLayout>
-    <View
-        android:id="@+id/loadingOverlay"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#80000000"
-        android:visibility="gone"
-        android:clickable="true"
-        android:focusable="true"/>
-
-</RelativeLayout>
+</FrameLayout>

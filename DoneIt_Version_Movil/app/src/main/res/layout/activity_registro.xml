@@ -146,7 +146,7 @@
                     android:layout_height="wrap_content"
                     android:text="Registrarse"
                     android:backgroundTint="#007ACC"
-                    android:textColor="#FFFFFF"
+                    android:textColor="@color/white"
                     android:padding="12dp" />
 
                 <!-- Link para volver al login -->

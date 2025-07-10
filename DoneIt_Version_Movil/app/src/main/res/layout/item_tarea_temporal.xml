@@ -6,7 +6,7 @@
     android:orientation="horizontal"
     android:padding="12dp"
     android:layout_marginBottom="8dp"
-    android:background="#FFFFFF"
+    android:background="@color/white"
     android:elevation="2dp"
     android:gravity="center_vertical">
 
@@ -22,7 +22,7 @@
             android:layout_height="wrap_content"
             android:text="Título"
             android:textStyle="bold"
-            android:textColor="#1976D2"
+            android:textColor="@color/azulBoton"
             android:textSize="16sp" />
 
         <TextView
@@ -41,7 +41,7 @@
         android:src="@drawable/ic_edit"
         android:background="?selectableItemBackgroundBorderless"
         android:contentDescription="Editar"
-        app:tint="#1976D2" />
+        app:tint="@color/azulBoton" />
 
     <ImageButton
         android:id="@+id/btnEliminar"
@@ -50,5 +50,5 @@
         android:src="@drawable/ic_delete"
         android:background="?selectableItemBackgroundBorderless"
         android:contentDescription="Eliminar"
-        app:tint="#D32F2F" />
+        app:tint="@color/rojoMenu" />
 </LinearLayout>

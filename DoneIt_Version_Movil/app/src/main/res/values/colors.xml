@@ -6,4 +6,6 @@
     <color name="texto_gris">#666666</color>
     <color name="pista_gris">#888888</color>
     <color name="celeste_principal">#33B5E5</color>
+    <color name="azulBoton">#1976D2</color>
+
 </resources>

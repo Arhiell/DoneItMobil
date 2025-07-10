@@ -4,70 +4,75 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageButton
+import com.herreroco.doneit_version_movil.R
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.herreroco.doneit_version_movil.databinding.ActivityPerfilUsuarioBinding
-import com.herreroco.doneit_version_movil.network.RetrofitClient
 import com.herreroco.doneit_version_movil.ui.home.HomeActivity
-import kotlinx.coroutines.*
-import retrofit2.HttpException
+import com.herreroco.doneit_version_movil.viewmodel.PerfilUsuarioViewModel
 
 class PerfilUsuarioActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityPerfilUsuarioBinding
+    private val viewModel: PerfilUsuarioViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityPerfilUsuarioBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // 🔧 ahora que la vista ya está cargada, podés acceder a los botones
-        val btnHome = findViewById<ImageButton>(
-            resources.getIdentifier("btnHome", "id", packageName)
-        )
-
+        val btnHome = findViewById<ImageButton>(resources.getIdentifier("btnHome", "id", packageName))
         btnHome.setOnClickListener {
-            val intent = Intent(this, HomeActivity::class.java)
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
-            startActivity(intent)
-            finish()
+            mostrarCargaYEsperar()
         }
 
-        cargarPerfil()
+        observarViewModel()
+        viewModel.cargarPerfil()
 
         binding.btnEditar.setOnClickListener {
             Toast.makeText(this, "Función para editar aún no implementada", Toast.LENGTH_SHORT).show()
         }
     }
-    private fun cargarPerfil() {
-        val api = RetrofitClient.getApiService(this)
 
-        CoroutineScope(Dispatchers.IO).launch {
-            try {
-                val response = api.getMiPerfil()
-                if (response.isSuccessful && response.body() != null) {
-                    val usuario = response.body()!!
-                    withContext(Dispatchers.Main) {
-                        binding.tvUsuario.text = usuario.nombre_usuario
-                        binding.tvNombreCompleto.text = "${usuario.nombre} ${usuario.apellido}"
-                        binding.tvEmail.text = usuario.email
-                        binding.tvFechaNacimiento.text = usuario.fecha_nacimiento
-                        binding.tvFechaRegistro.text = usuario.fecha_registro
-                    }
-                } else {
-                    withContext(Dispatchers.Main) {
-                        Toast.makeText(this@PerfilUsuarioActivity, "Error al cargar perfil (código ${response.code()})", Toast.LENGTH_SHORT).show()
-                    }
-                }
-            } catch (e: HttpException) {
-                withContext(Dispatchers.Main) {
-                    Toast.makeText(this@PerfilUsuarioActivity, "Error HTTP: ${e.code()}", Toast.LENGTH_SHORT).show()
-                }
-            } catch (e: Exception) {
-                withContext(Dispatchers.Main) {
-                    Toast.makeText(this@PerfilUsuarioActivity, "Error: ${e.message}", Toast.LENGTH_SHORT).show()
-                }
+    private fun observarViewModel() {
+        viewModel.usuario.observe(this) { usuario ->
+            usuario?.let {
+                binding.tvUsuario.text = it.nombre_usuario
+                binding.tvNombreCompleto.text = "${it.nombre} ${it.apellido}"
+                binding.tvEmail.text = it.email
+                binding.tvFechaNacimiento.text = it.fecha_nacimiento
+                binding.tvFechaRegistro.text = it.fecha_registro
             }
         }
+
+        viewModel.mensajeError.observe(this) { error ->
+            if (!error.isNullOrEmpty()) {
+                Toast.makeText(this, error, Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        viewModel.cargando.observe(this) { cargando ->
+            val overlay = findViewById<View>(com.herreroco.doneit_version_movil.R.id.includeLoading)
+            overlay.visibility = if (cargando) View.VISIBLE else View.GONE
+        }
     }
+
+    private fun mostrarCargaYEsperar() {
+        val overlay = findViewById<View>(R.id.includeLoading)
+
+        overlay.visibility = View.VISIBLE
+        overlay.bringToFront()  // Por si no se superpone correctamente
+
+        // Esperar 2 segundos antes de ir a Home
+        overlay.postDelayed({
+            overlay.visibility = View.GONE
+            val intent = Intent(this, HomeActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+            startActivity(intent)
+            finish()
+        }, 2000)
+    }
+
+
 }

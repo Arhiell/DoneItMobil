@@ -15,17 +15,35 @@
         android:orientation="vertical"
         android:padding="16dp">
 
-        <!-- Título del proyecto (expande/cierra) -->
-        <TextView
-            android:id="@+id/tvNombreProyecto"
-            android:layout_width="wrap_content"
+        <!-- Título del proyecto con icono desplegable -->
+        <LinearLayout
+            android:id="@+id/headerProyecto"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Nombre del Proyecto"
-            android:textStyle="bold"
-            android:textSize="18sp"
-            android:textColor="#01579B"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
             android:clickable="true"
-            android:focusable="true" />
+            android:focusable="true">
+
+            <TextView
+                android:id="@+id/tvNombreProyecto"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Nombre del Proyecto"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="#01579B" />
+
+            <ImageView
+                android:id="@+id/ivExpandir"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_expand_more"
+                android:contentDescription="Expandir"
+                android:tint="#01579B"
+                android:layout_marginStart="8dp" />
+        </LinearLayout>
 
         <!-- Descripción -->
         <TextView
@@ -34,7 +52,7 @@
             android:layout_height="wrap_content"
             android:text="Descripción del proyecto"
             android:textSize="14sp"
-            android:textColor="#666666"
+            android:textColor="@color/texto_gris"
             android:layout_marginTop="8dp" />
 
         <!-- Botones (editar tareas y eliminar proyecto) -->
@@ -63,7 +81,7 @@
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:contentDescription="Eliminar"
                 android:layout_marginStart="8dp"
-                app:tint="#D32F2F" />
+                app:tint="@color/rojoMenu" />
         </LinearLayout>
 
         <!-- Contenedor de tareas (expansible) -->

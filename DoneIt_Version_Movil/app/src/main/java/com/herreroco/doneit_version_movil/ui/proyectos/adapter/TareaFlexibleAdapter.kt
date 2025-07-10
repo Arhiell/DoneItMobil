@@ -10,11 +10,12 @@ import com.herreroco.doneit_version_movil.R
 import com.herreroco.doneit_version_movil.model.TareaTemporal
 
 class TareaFlexibleAdapter(
-    private val tareas: List<TareaTemporal>,
     private val modoEditable: Boolean,
     private val onEditarClick: ((Int) -> Unit)? = null,
     private val onEliminarClick: ((Int) -> Unit)? = null
 ) : RecyclerView.Adapter<TareaFlexibleAdapter.TareaViewHolder>() {
+
+    private val tareas = mutableListOf<TareaTemporal>()
 
     inner class TareaViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val titulo: TextView = itemView.findViewById(R.id.txtTitulo)
@@ -59,4 +60,13 @@ class TareaFlexibleAdapter(
     }
 
     override fun getItemCount(): Int = tareas.size
+
+    // 🚀 Método para actualizar la lista desde el ViewModel
+    fun setTareas(nuevas: List<TareaTemporal>) {
+        tareas.clear()
+        tareas.addAll(nuevas)
+        notifyDataSetChanged()
+    }
+
+    fun getTareas(): List<TareaTemporal> = tareas
 }

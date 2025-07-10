@@ -20,24 +20,46 @@ namespace DoneItAPI.Controllers
         }
 
         [HttpPost]
+        [HttpPost]
         public async Task<IActionResult> CrearTarea([FromBody] TareaRequest request)
         {
-            var tarea = new Tarea
+            try
             {
-                Titulo = request.Titulo,
-                Descripcion = request.Descripcion,
-                Fecha_Inicio = request.Fecha_Inicio,
-                Fecha_Fin = request.Fecha_Fin,
-                Estado = request.Estado,
-                Prioridad = request.Prioridad,
-                Id_Proyecto = request.Id_Proyecto
-            };
+                var tarea = new Tarea
+                {
+                    Titulo = request.Titulo,
+                    Descripcion = request.Descripcion,
+                    Fecha_Inicio = request.Fecha_Inicio,
+                    Fecha_Fin = request.Fecha_Fin,
+                    Estado = request.Estado,
+                    Prioridad = request.Prioridad,
+                    Id_Proyecto = request.Id_Proyecto
+                };
 
-            _context.Tareas.Add(tarea);
-            await _context.SaveChangesAsync();
+                _context.Tareas.Add(tarea);
+                await _context.SaveChangesAsync();
 
-            return Ok(new { mensaje = "Tarea creada con éxito", tarea.Id_Tarea });
+                return Ok(new { mensaje = "Tarea creada con éxito", tarea.Id_Tarea });
+            }
+            catch (DbUpdateException ex)
+            {
+                // 🐞 Mostramos info detallada para debug
+                return StatusCode(500, new
+                {
+                    error = "Error al guardar tarea",
+                    detalle = ex.InnerException?.Message ?? ex.Message
+                });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new
+                {
+                    error = "Error inesperado",
+                    detalle = ex.Message
+                });
+            }
         }
+
 
         [HttpGet("proyecto/{idProyecto}")]
         public async Task<IActionResult> GetTareasDeProyecto(int idProyecto)
