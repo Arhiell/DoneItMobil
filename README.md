@@ -86,5 +86,36 @@ El objetivo es construir una herramienta realista y funcional que sirva como mod
 
 * 👨‍🏫 **Profesores:** 
     - Fernandez, José. (Desarrollo Web).
-
+ 
     - Ramírez, Gerardo. (Desarrollo Mobil).
+
+
+
+
+VIDEOS DE LA APLICACION:
+
+Registro:
+https://github.com/user-attachments/assets/9e4d29f6-c107-4981-9742-3e9e5c0e8b51
+
+Login:
+https://github.com/user-attachments/assets/bf05413e-d071-4310-8df8-2590b7146fe6
+
+Home -> Perfil usuario:
+https://github.com/user-attachments/assets/6d1143d7-4a88-482c-a818-e53824a394c2
+
+Mis Proyectos:
+https://github.com/user-attachments/assets/f6bbc02e-8fad-455f-980f-097cce3ed47e
+
+Eliminar y Editar Proyecto:
+https://github.com/user-attachments/assets/16a7cf26-e15e-447c-a30e-54ad450bbcdf
+
+Creacion de Proyecto:
+https://github.com/user-attachments/assets/4a4d5924-dbbe-49e4-86cc-b70158dfc92d
+
+Moverse por la aplicacion atraves de botones de la barra inferior:
+https://github.com/user-attachments/assets/2da3e45e-c44d-47eb-bc4a-eb75edd25866
+
+
+
+
+
