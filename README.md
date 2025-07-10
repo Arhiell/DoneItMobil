@@ -64,6 +64,78 @@ El objetivo es construir una herramienta realista y funcional que sirva como mod
 5. 📷 Generar código QR para acceder a contenido (enlace, frase, etc.).
 
 ---
+
+## 🎥 Demostraciones en video
+
+| Funcionalidad | Enlace |
+|---------------|--------|
+| 📝 **Registro** | [Ver video](https://github.com/user-attachments/assets/9e4d29f6-c107-4981-9742-3e9e5c0e8b51) |
+| 🔐 **Login** | [Ver video](https://github.com/user-attachments/assets/bf05413e-d071-4310-8df8-2590b7146fe6) |
+| 👤 **Home → Perfil Usuario** | [Ver video](https://github.com/user-attachments/assets/6d1143d7-4a88-482c-a818-e53824a394c2) |
+| 📂 **Mis Proyectos** | [Ver video](https://github.com/user-attachments/assets/f6bbc02e-8fad-455f-980f-097cce3ed47e) |
+| ✏️🗑️ **Editar / Eliminar Proyecto** | [Ver video](https://github.com/user-attachments/assets/16a7cf26-e15e-447c-a30e-54ad450bbcdf) |
+| 🆕 **Creación de Proyecto** | [Ver video](https://github.com/user-attachments/assets/4a4d5924-dbbe-49e4-86cc-b70158dfc92d) |
+| 🔄 **Navegación con barra inferior** | [Ver video](https://github.com/user-attachments/assets/2da3e45e-c44d-47eb-bc4a-eb75edd25866) |
+
+---
+
+## 🛠️ Cambios Realizados
+
+### 🔧 Mejoras generales
+- 🧩 Se crearon **ViewModels** para cumplir correctamente con el patrón MVVM.
+- 📥 En el **registro**, se reemplazó el botón *Enter* por *Siguiente* para facilitar el llenado de campos.
+- 📧 Validación del correo electrónico: solo se permiten dominios válidos (`@gmail.com`, `@hotmail.com`, etc).
+
+### 📅 Crear Proyecto
+- ⚠️ Advertencia visual al intentar **eliminar una tarea**.
+- 🕓 El formato de fecha fue ajustado a: `DD-MM-AAAA HH:MM` (antes incluía `T` y segundos).
+- 🏷️ Se agregaron **títulos descriptivos** para los campos `Estado` y `Prioridad`.
+
+### 🧭 Navegación
+- 🚫 Todos los **spinners** ahora bloquean la **barra inferior de navegación** para evitar interferencias.
+- ⬇️ En **Mis Proyectos**, ahora aparece un ícono `>` para **desplegar tareas**, que cambia a `<` para **ocultarlas**.
+- ✏️ Al **editar un proyecto**, se mantienen las mismas precauciones que al crearlo:
+  - ⚠️ Advertencia al eliminar tareas.
+  - 💾 Spinner al guardar, que redirige automáticamente a *Mis Proyectos*.
+- 🏠 Se agregó un **spinner** al volver a *Home* desde la vista de usuario.
+
+---
+
+## 🎥 Demostraciones en video
+
+| Funcionalidad | Enlace |
+|---------------|--------|
+| 📝 **Registro** | [Ver video](https://github.com/user-attachments/assets/9e4d29f6-c107-4981-9742-3e9e5c0e8b51) |
+| 🔐 **Login** | [Ver video](https://github.com/user-attachments/assets/bf05413e-d071-4310-8df8-2590b7146fe6) |
+| 👤 **Home → Perfil Usuario** | [Ver video](https://github.com/user-attachments/assets/6d1143d7-4a88-482c-a818-e53824a394c2) |
+| 📂 **Mis Proyectos** | [Ver video](https://github.com/user-attachments/assets/f6bbc02e-8fad-455f-980f-097cce3ed47e) |
+| ✏️🗑️ **Editar / Eliminar Proyecto** | [Ver video](https://github.com/user-attachments/assets/16a7cf26-e15e-447c-a30e-54ad450bbcdf) |
+| 🆕 **Creación de Proyecto** | [Ver video](https://github.com/user-attachments/assets/4a4d5924-dbbe-49e4-86cc-b70158dfc92d) |
+| 🔄 **Navegación con barra inferior** | [Ver video](https://github.com/user-attachments/assets/2da3e45e-c44d-47eb-bc4a-eb75edd25866) |
+
+---
+
+## 🛠️ Cambios Realizados
+
+### 🔧 Mejoras generales
+- 🧩 Se crearon **ViewModels** para cumplir correctamente con el patrón MVVM.
+- 📥 En el **registro**, se reemplazó el botón *Enter* por *Siguiente* para facilitar el llenado de campos.
+- 📧 Validación del correo electrónico: solo se permiten dominios válidos (`@gmail.com`, `@hotmail.com`, etc).
+
+### 📅 Crear Proyecto
+- ⚠️ Advertencia visual al intentar **eliminar una tarea**.
+- 🕓 El formato de fecha fue ajustado a: `DD-MM-AAAA HH:MM` (antes incluía `T` y segundos).
+- 🏷️ Se agregaron **títulos descriptivos** para los campos `Estado` y `Prioridad`.
+
+### 🧭 Navegación
+- 🚫 Todos los **spinners** ahora bloquean la **barra inferior de navegación** para evitar interferencias.
+- ⬇️ En **Mis Proyectos**, ahora aparece un ícono `>` para **desplegar tareas**, que cambia a `<` para **ocultarlas**.
+- ✏️ Al **editar un proyecto**, se mantienen las mismas precauciones que al crearlo:
+  - ⚠️ Advertencia al eliminar tareas.
+  - 💾 Spinner al guardar, que redirige automáticamente a *Mis Proyectos*.
+- 🏠 Se agregó un **spinner** al volver a *Home* desde la vista de usuario.
+
+---
 ## 👥 Autores
 
 - 👨‍💻[**Ayala, Ariel.**](https://github.com/Arhiell)
@@ -71,85 +143,7 @@ El objetivo es construir una herramienta realista y funcional que sirva como mod
 - 👨‍💻 [**Herro, Andres.**](https://github.com/HerreroAndre)
 - 👨‍💻 [**Mill, Juan.**](https://github.com/r4ideny)
 
-# 📱 DoneIt! - Gestor de Proyectos y Tareas
-
-Una aplicación para gestionar proyectos personales y grupales de forma práctica e intuitiva.
-
 ---
-
-## 🎥 Demostraciones en video
-
-| Funcionalidad | Enlace |
-|---------------|--------|
-| 📝 **Registro** | [Ver video](https://github.com/user-attachments/assets/9e4d29f6-c107-4981-9742-3e9e5c0e8b51) |
-| 🔐 **Login** | [Ver video](https://github.com/user-attachments/assets/bf05413e-d071-4310-8df8-2590b7146fe6) |
-| 👤 **Home → Perfil Usuario** | [Ver video](https://github.com/user-attachments/assets/6d1143d7-4a88-482c-a818-e53824a394c2) |
-| 📂 **Mis Proyectos** | [Ver video](https://github.com/user-attachments/assets/f6bbc02e-8fad-455f-980f-097cce3ed47e) |
-| ✏️🗑️ **Editar / Eliminar Proyecto** | [Ver video](https://github.com/user-attachments/assets/16a7cf26-e15e-447c-a30e-54ad450bbcdf) |
-| 🆕 **Creación de Proyecto** | [Ver video](https://github.com/user-attachments/assets/4a4d5924-dbbe-49e4-86cc-b70158dfc92d) |
-| 🔄 **Navegación con barra inferior** | [Ver video](https://github.com/user-attachments/assets/2da3e45e-c44d-47eb-bc4a-eb75edd25866) |
-
----
-
-## 🛠️ Cambios Realizados
-
-### 🔧 Mejoras generales
-- 🧩 Se crearon **ViewModels** para cumplir correctamente con el patrón MVVM.
-- 📥 En el **registro**, se reemplazó el botón *Enter* por *Siguiente* para facilitar el llenado de campos.
-- 📧 Validación del correo electrónico: solo se permiten dominios válidos (`@gmail.com`, `@hotmail.com`, etc).
-
-### 📅 Crear Proyecto
-- ⚠️ Advertencia visual al intentar **eliminar una tarea**.
-- 🕓 El formato de fecha fue ajustado a: `DD-MM-AAAA HH:MM` (antes incluía `T` y segundos).
-- 🏷️ Se agregaron **títulos descriptivos** para los campos `Estado` y `Prioridad`.
-
-### 🧭 Navegación
-- 🚫 Todos los **spinners** ahora bloquean la **barra inferior de navegación** para evitar interferencias.
-- ⬇️ En **Mis Proyectos**, ahora aparece un ícono `>` para **desplegar tareas**, que cambia a `<` para **ocultarlas**.
-- ✏️ Al **editar un proyecto**, se mantienen las mismas precauciones que al crearlo:
-  - ⚠️ Advertencia al eliminar tareas.
-  - 💾 Spinner al guardar, que redirige automáticamente a *Mis Proyectos*.
-- 🏠 Se agregó un **spinner** al volver a *Home* desde la vista de usuario.
-
----
-
-## 🎥 Demostraciones en video
-
-| Funcionalidad | Enlace |
-|---------------|--------|
-| 📝 **Registro** | [Ver video](https://github.com/user-attachments/assets/9e4d29f6-c107-4981-9742-3e9e5c0e8b51) |
-| 🔐 **Login** | [Ver video](https://github.com/user-attachments/assets/bf05413e-d071-4310-8df8-2590b7146fe6) |
-| 👤 **Home → Perfil Usuario** | [Ver video](https://github.com/user-attachments/assets/6d1143d7-4a88-482c-a818-e53824a394c2) |
-| 📂 **Mis Proyectos** | [Ver video](https://github.com/user-attachments/assets/f6bbc02e-8fad-455f-980f-097cce3ed47e) |
-| ✏️🗑️ **Editar / Eliminar Proyecto** | [Ver video](https://github.com/user-attachments/assets/16a7cf26-e15e-447c-a30e-54ad450bbcdf) |
-| 🆕 **Creación de Proyecto** | [Ver video](https://github.com/user-attachments/assets/4a4d5924-dbbe-49e4-86cc-b70158dfc92d) |
-| 🔄 **Navegación con barra inferior** | [Ver video](https://github.com/user-attachments/assets/2da3e45e-c44d-47eb-bc4a-eb75edd25866) |
-
----
-
-## 🛠️ Cambios Realizados
-
-### 🔧 Mejoras generales
-- 🧩 Se crearon **ViewModels** para cumplir correctamente con el patrón MVVM.
-- 📥 En el **registro**, se reemplazó el botón *Enter* por *Siguiente* para facilitar el llenado de campos.
-- 📧 Validación del correo electrónico: solo se permiten dominios válidos (`@gmail.com`, `@hotmail.com`, etc).
-
-### 📅 Crear Proyecto
-- ⚠️ Advertencia visual al intentar **eliminar una tarea**.
-- 🕓 El formato de fecha fue ajustado a: `DD-MM-AAAA HH:MM` (antes incluía `T` y segundos).
-- 🏷️ Se agregaron **títulos descriptivos** para los campos `Estado` y `Prioridad`.
-
-### 🧭 Navegación
-- 🚫 Todos los **spinners** ahora bloquean la **barra inferior de navegación** para evitar interferencias.
-- ⬇️ En **Mis Proyectos**, ahora aparece un ícono `>` para **desplegar tareas**, que cambia a `<` para **ocultarlas**.
-- ✏️ Al **editar un proyecto**, se mantienen las mismas precauciones que al crearlo:
-  - ⚠️ Advertencia al eliminar tareas.
-  - 💾 Spinner al guardar, que redirige automáticamente a *Mis Proyectos*.
-- 🏠 Se agregó un **spinner** al volver a *Home* desde la vista de usuario.
-
----
-
-
 # 🎓 Datos Académicos
 * 📚 **Materia:**Programación III
 * 💻 **Carrera:** Tecnicatura Universitaria en Programación
@@ -160,7 +154,6 @@ Una aplicación para gestionar proyectos personales y grupales de forma práctic
 
 * 👨‍🏫 **Profesores:** 
     - Fernandez, José. (Desarrollo Web).
- 
     - Ramírez, Gerardo. (Desarrollo Mobil).
 
 
