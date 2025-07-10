@@ -1,7 +1,3 @@
-
-
-https://github.com/user-attachments/assets/9f79f35b-6ab9-493a-9e3d-4b8b6fab033b
-
 # 🚀 **DoneIt!** ❗
 
 > 📌 *Gestor de tareas individuales y colaborativas orientado a la organización completa de proyectos.*
@@ -92,11 +88,3 @@ El objetivo es construir una herramienta realista y funcional que sirva como mod
     - Fernandez, José. (Desarrollo Web).
 
     - Ramírez, Gerardo. (Desarrollo Mobil).
-
-      ![VideoCapture_20250703-153211 1](https://github.com/user-attachments/assets/0d1a7980-6de0-49e6-9781-e07e37771734)
-
-![VideoCapture_20250703-153157 1](https://github.com/user-attachments/assets/cb1549d7-1e6d-424f-a949-e200dd66201d)
-
-
-
-solución del problema del pull con le readme
