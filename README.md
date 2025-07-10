@@ -129,6 +129,7 @@ Cambios realizados:
                   >Ahora Estado y Prioridad tienen titulos para que el cliente sepa que esta categorizando con cada opcion
 
 -En general todos los spinners bloquean la barra inferior de navegacion
+
 -Ahora al ver proyectos en Mis Proyectos hay una > mirando hacia abajo para desplegar las tareas, que cambia a un < mirando hacia arriba para ocultarlas
 
 -Al editar un proyecto se tienen las mismas precauciones que al crear, o sea, si se quiere eliminar una tarea sale una advertencia, al guardar cambios sale un spinner que te envia a Mis Proyectos
