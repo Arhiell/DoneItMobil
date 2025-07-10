@@ -115,7 +115,17 @@ https://github.com/user-attachments/assets/4a4d5924-dbbe-49e4-86cc-b70158dfc92d
 Moverse por la aplicacion atraves de botones de la barra inferior:
 https://github.com/user-attachments/assets/2da3e45e-c44d-47eb-bc4a-eb75edd25866
 
-
-
+Cambios realizados:
+-Se crearon Clases ViewModel para un mejor cumplimiento de MVVM
+-Ahora en el registro el boton de enter se sustituyo con siguiente, para ir al siguiente campo en vez de realizar un salto de linea
+-Tambien en el registro, solo se pueden ingresar un @ valido en correo electronico (@gmail.com, @hotmail.com, etc)
+-En Crear Proyecto:
+                  >Advertencia de eliminar al querer eliminar una tarea
+                  >El formato de fecha ahora es DD-MM-AAAA HH:MM en vez de DD-MM-AAAA T HH:MM:SS, esto tambien aplica para editar tareas, en caso que no recuerde antes las horas decian: 27/11/2024T18:45:00
+                  >Ahora Estado y Prioridad tienen titulos para que el cliente sepa que esta categorizando con cada opcion
+-En general todos los spinners bloquean la barra inferior de navegacion
+-Ahora al ver proyectos en Mis Proyectos hay una > mirando hacia abajo para desplegar las tareas, que cambia a un < mirando hacia arriba para ocultarlas
+-Al editar un proyecto se tienen las mismas precauciones que al crear, o sea, si se quiere eliminar una tarea sale una advertencia, al guardar cambios sale un spinner que te envia a Mis Proyectos
+-Agregado spinner al volver a home desde la vista de usuario
 
 
