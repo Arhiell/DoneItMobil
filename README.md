@@ -69,7 +69,7 @@ El objetivo es construir una herramienta realista y funcional que sirva como mod
 
 | Funcionalidad | Enlace |
 |---------------|--------|
-| 📝 **Registro** | [Ver video]([https://github.com/user-attachments/assets/9e4d29f6-c107-4981-9742-3e9e5c0e8b51]) |
+| 📝 **Registro** | [Ver video](https://github.com/user-attachments/assets/9e4d29f6-c107-4981-9742-3e9e5c0e8b51) |
 | 🔐 **Login** | [Ver video](https://github.com/user-attachments/assets/bf05413e-d071-4310-8df8-2590b7146fe6) |
 | 👤 **Home → Perfil Usuario** | [Ver video](https://github.com/user-attachments/assets/6d1143d7-4a88-482c-a818-e53824a394c2) |
 | 📂 **Mis Proyectos** | [Ver video](https://github.com/user-attachments/assets/f6bbc02e-8fad-455f-980f-097cce3ed47e) |
